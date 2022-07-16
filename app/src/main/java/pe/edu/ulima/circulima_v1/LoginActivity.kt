@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.FirebaseApp
+import pe.edu.ulima.circulima_v1.beans.GestorCirculos
 
 
 class LoginActivity : AppCompatActivity() {
@@ -13,6 +15,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_activity)
         val button = findViewById<View>(R.id.button) as Button
+
+        GestorCirculos.getInstance().printDB()
+        GestorCirculos.getInstance().prueba()
+        println("IDENTIFICADOR2")
+
         button.setOnClickListener {
             openActivity2()
         }
