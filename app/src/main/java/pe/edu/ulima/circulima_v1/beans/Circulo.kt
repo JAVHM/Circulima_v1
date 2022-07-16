@@ -4,14 +4,14 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
 
-@Entity
 class Circulo {
-    @PrimaryKey
     var ID: Int
     var NOMBRE : String
+    var CARRERA : String
 
-    constructor(ID: Int, NOMBRE: String, FECHA: Int) {
+    constructor(ID: Int, NOMBRE: String, CARRERA : String) {
         this.ID = ID
         this.NOMBRE = NOMBRE
+        this.CARRERA = CARRERA
     }
 }
