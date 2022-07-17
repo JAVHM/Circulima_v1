@@ -9,32 +9,32 @@ import pe.edu.ulima.circulima_v1.R
 import pe.edu.ulima.circulima_v1.models.beans.Circulo
 
 class ListadoCirculosAdapter(private val mListaPlanetas : List<Circulo>,
-                             private val mOnItemClickListener : (circulo : Circulo) -> Unit)
+    private val mOnItemClickListener : (circulo : Circulo) -> Unit)
     : RecyclerView.Adapter<ListadoCirculosAdapter.ViewHolder>(){
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
-        val tviPlanetaNombre : TextView
-        val tviPlanetaTerreno : TextView
-        val tviPlanetaPoblacion : TextView
+        val tviCirculoNombre : TextView
+        val tviCirculoDescripcion : TextView
+        val tviCarrera : TextView
 
         init {
-            tviPlanetaNombre = view.findViewById(R.id.tviPlanetaNombre)
-            tviPlanetaTerreno = view.findViewById(R.id.tviPlanetaTerreno)
-            tviPlanetaPoblacion = view.findViewById(R.id.tviPlanetaPoblacion)
+            tviCirculoNombre = view.findViewById(R.id.tviCirculoNombre)
+            tviCirculoDescripcion = view.findViewById(R.id.tviCirculoDescripcion)
+            tviCarrera = view.findViewById(R.id.tviCarrera)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_planeta, parent, false)
+            .inflate(R.layout.item_circulo, parent, false)
         val viewHolder = ViewHolder(view)
         return viewHolder
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val circulo = mListaPlanetas[position]
-        holder.tviPlanetaNombre.text = circulo.NOMBRE
-        holder.tviPlanetaTerreno.text = circulo.DESCRIPCION
-        holder.tviPlanetaPoblacion.text = circulo.CARRERA
+        holder.tviCirculoNombre.text = circulo.NOMBRE
+        holder.tviCirculoDescripcion.text = circulo.DESCRIPCION
+        holder.tviCarrera.text = circulo.CARRERA
 
         holder.itemView.setOnClickListener {
             mOnItemClickListener(circulo)

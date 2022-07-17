@@ -6,7 +6,7 @@
     android:layout_height="150dp">
 
     <TextView
-        android:id="@+id/tviPlanetaNombre"
+        android:id="@+id/tviPubTitulo"
         android:layout_width="280dp"
         android:layout_height="38dp"
         android:layout_marginStart="16dp"
@@ -17,18 +17,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tviPlanetaTerreno"
+        android:id="@+id/tviPubContenido"
         android:layout_width="386dp"
         android:layout_height="89dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:text="TextView"
-        android:textSize="9sp"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tviPlanetaNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/tviPubTitulo" />
 
     <TextView
-        android:id="@+id/tviPlanetaPoblacion"
+        android:id="@+id/tviFecha"
         android:layout_width="87dp"
         android:layout_height="37dp"
         android:layout_marginTop="16dp"

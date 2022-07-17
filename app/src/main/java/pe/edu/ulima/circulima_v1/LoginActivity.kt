@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import pe.edu.ulima.circulima_v1.models.GestorCirculos
+import pe.edu.ulima.circulima_v1.models.GestorPublicaciones
 
 
 class LoginActivity : AppCompatActivity() {
@@ -15,6 +16,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.login_activity)
         val button = findViewById<View>(R.id.button) as Button
         GestorCirculos.getInstance().generarCirculos()
+        GestorPublicaciones.getInstance().generarPublicaciones()
 
         button.setOnClickListener {
             openActivity2()

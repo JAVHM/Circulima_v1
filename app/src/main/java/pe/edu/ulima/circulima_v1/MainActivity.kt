@@ -3,22 +3,20 @@ package pe.edu.ulima.circulima_v1
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentTransaction
-import pe.edu.ulima.circulima_v1.fragments.PlanetasFragment
-import pe.edu.ulima.circulima_v1.models.GestorCirculos
+import pe.edu.ulima.circulima_v1.fragments.ListaCirculosFragment
+import pe.edu.ulima.circulima_v1.fragments.ListaPublicacionesFragment
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
 
-    private val fragmentPlanetas = PlanetasFragment()
+    private val fragmentCirculos = ListaCirculosFragment()
+    private val fragmentPublicaciones = ListaPublicacionesFragment()
 
-     override fun onCreate(savedInstanceState: Bundle?) {
-         // Configuramos el viewpager con el adapter creado
-         super.onCreate(savedInstanceState)
-         setContentView(R.layout.main_activity)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.main_activity)
 
-
-         val ft = supportFragmentManager.beginTransaction()
-         ft.add(R.id.fcvSecciones, fragmentPlanetas)
-         ft.commit()
+        val ft = supportFragmentManager.beginTransaction()
+        ft.add(R.id.fcvSecciones, fragmentPublicaciones)
+        ft.commit()
     }
 }

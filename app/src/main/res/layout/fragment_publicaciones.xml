@@ -9,14 +9,14 @@
         android:id="@+id/tviTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Círculos"
+        android:text="Publicaciones"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rviPlanetas"
+        android:id="@+id/rviPublicaciones"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -28,5 +28,5 @@
         app:layout_constraintTop_toBottomOf="@+id/tviTitulo"
         app:layout_constraintVertical_bias="1.0"
         tools:itemCount="5"
-        tools:listitem="@layout/item_planeta" />
+        tools:listitem="@layout/item_publicacion" />
 </androidx.constraintlayout.widget.ConstraintLayout>
