@@ -9,11 +9,12 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import pe.edu.ulima.circulima_v1.R
+import pe.edu.ulima.circulima_v1.models.GestorCirculos
 
-class CirculoFragment : Fragment(R.layout.fragment_circulo) {
+class CirculoEditFragment : Fragment(R.layout.fragment_circulo_edit){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        activity?.title = "Circulos"
+        activity?.title = "Circulo Edit"
         setHasOptionsMenu(true)
     }
     override fun onCreateView(
@@ -21,24 +22,20 @@ class CirculoFragment : Fragment(R.layout.fragment_circulo) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_circulo, container, false)
+        val view = inflater.inflate(R.layout.fragment_circulo_edit, container, false)
         val textViewNombre : TextView = view.findViewById(R.id.tviNombre)
-        val textViewDesc : TextView = view.findViewById(R.id.tviDescripcion2)
-        val editBtn : Button = view.findViewById(R.id.btnEdit)
+        val editViewDesc : TextView = view.findViewById(R.id.editDescription)
+        val guardarBtn : Button = view.findViewById(R.id.btnGuardar)
 
         val args = this.arguments
         val inputDataNombre = args?.get("dataNombre")
         textViewNombre.text = inputDataNombre.toString()
-        val inputDataDesc = args?.get("dataDescripcion")
-        textViewDesc.text = inputDataDesc.toString()
+        val editDataDesc = args?.get("dataDescripcion")
+        editViewDesc.text = editDataDesc.toString()
 
-        editBtn.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putString("dataID", args?.get("dataID").toString())
-            bundle.putString("dataNombre", inputDataNombre.toString())
-            bundle.putString("dataDescripcion", inputDataDesc.toString())
-            val fragment = CirculoEditFragment()
-            fragment.arguments = bundle
+        guardarBtn.setOnClickListener {
+            GestorCirculos.getInstance().actualizarDescripcion(args?.get("dataID").toString(), editViewDesc.text.toString())
+            val fragment = ListaCirculosFragment()
             fragmentManager?.beginTransaction()?.replace(R.id.fcvSecciones, fragment)?.commit()
         }
 
@@ -46,6 +43,5 @@ class CirculoFragment : Fragment(R.layout.fragment_circulo) {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
 }

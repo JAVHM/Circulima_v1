@@ -66,4 +66,15 @@ class GestorCirculos {
             }
         return resultado
     }
+
+    fun actualizarDescripcion(id: String, descripcion : String){
+        dbFirebase.collection("circulos")
+            .document(id)
+            .update(mapOf(
+                "descripcion" to descripcion,
+            ))
+        listaCirculo.find { it.ID == id }!!.DESCRIPCION = descripcion
+        println(listaCirculo.find { it.ID == id }!!.DESCRIPCION)
+        println("Actualizar descripción: " + descripcion)
+    }
 }

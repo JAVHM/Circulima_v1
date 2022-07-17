@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
 
         val ft = supportFragmentManager.beginTransaction()
-        ft.add(R.id.fcvSecciones, fragmentPublicaciones)
+        ft.add(R.id.fcvSecciones, fragmentCirculos)
         ft.commit()
     }
 }

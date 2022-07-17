@@ -42,6 +42,7 @@ class ListaCirculosFragment : Fragment() {
             }
             val adapter = ListadoCirculosAdapter(lista) {
                 val bundle = Bundle()
+                bundle.putString("dataID", it.ID)
                 bundle.putString("dataNombre", it.NOMBRE)
                 bundle.putString("dataDescripcion", it.DESCRIPCION)
                 val fragment = CirculoFragment()
