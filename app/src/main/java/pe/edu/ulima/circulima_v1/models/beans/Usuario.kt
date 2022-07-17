@@ -1,8 +1,7 @@
-package pe.edu.ulima.circulima_v1.beans
+package pe.edu.ulima.circulima_v1.models.beans
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.*
 
 @Entity
 class Usuario {

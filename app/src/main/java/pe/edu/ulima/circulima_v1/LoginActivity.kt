@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import pe.edu.ulima.circulima_v1.beans.GestorCirculos
+import pe.edu.ulima.circulima_v1.models.GestorCirculos
 
 
 class LoginActivity : AppCompatActivity() {
@@ -14,14 +14,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_activity)
         val button = findViewById<View>(R.id.button) as Button
-
-        val listCirculos = GestorCirculos.getInstance().printDB()
+        GestorCirculos.getInstance().generarCirculos()
 
         button.setOnClickListener {
-            for (i in listCirculos){
-                println("GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-                println("nombre: " + i.NOMBRE)
-            }
             openActivity2()
         }
     }
