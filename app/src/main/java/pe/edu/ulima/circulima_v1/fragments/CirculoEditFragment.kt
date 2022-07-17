@@ -29,7 +29,7 @@ class CirculoEditFragment : Fragment(R.layout.fragment_circulo_edit){
 
         val args = this.arguments
         val inputDataNombre = args?.get("dataNombre")
-        textViewNombre.text = inputDataNombre.toString()
+        textViewNombre.text = inputDataNombre.toString()//sds
         val editDataDesc = args?.get("dataDescripcion")
         editViewDesc.text = editDataDesc.toString()
 
