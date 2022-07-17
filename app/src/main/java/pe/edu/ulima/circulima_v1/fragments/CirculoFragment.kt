@@ -39,7 +39,9 @@ class CirculoFragment : Fragment(R.layout.fragment_circulo) {
             bundle.putString("dataDescripcion", inputDataDesc.toString())
             val fragment = CirculoEditFragment()
             fragment.arguments = bundle
-            fragmentManager?.beginTransaction()?.replace(R.id.fcvSecciones, fragment)?.commit()
+            val ft = fragmentManager?.beginTransaction()
+            ft?.addToBackStack(null)
+            ft?.replace(R.id.fcvSecciones, fragment)?.commit()
         }
 
         return view

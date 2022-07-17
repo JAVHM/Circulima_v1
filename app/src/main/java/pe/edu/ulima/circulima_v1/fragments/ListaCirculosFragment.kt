@@ -47,7 +47,9 @@ class ListaCirculosFragment : Fragment() {
                 bundle.putString("dataDescripcion", it.DESCRIPCION)
                 val fragment = CirculoFragment()
                 fragment.arguments = bundle
-                fragmentManager?.beginTransaction()?.replace(R.id.fcvSecciones, fragment)?.commit()
+                val ft = fragmentManager?.beginTransaction()
+                ft?.addToBackStack(null)
+                ft?.replace(R.id.fcvSecciones, fragment)?.commit()
                 Log.i("PlanetasFragment","Se hizo click en el planeta " + it.NOMBRE)
             }
             mRviCirculos.adapter = adapter

@@ -36,7 +36,9 @@ class CirculoEditFragment : Fragment(R.layout.fragment_circulo_edit){
         guardarBtn.setOnClickListener {
             GestorCirculos.getInstance().actualizarDescripcion(args?.get("dataID").toString(), editViewDesc.text.toString())
             val fragment = ListaCirculosFragment()
-            fragmentManager?.beginTransaction()?.replace(R.id.fcvSecciones, fragment)?.commit()
+            val ft = fragmentManager?.beginTransaction()
+            ft?.addToBackStack(null)
+            ft?.replace(R.id.fcvSecciones, fragment)?.commit()
         }
 
         return view
