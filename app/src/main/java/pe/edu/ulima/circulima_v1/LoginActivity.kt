@@ -25,7 +25,13 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
-
+    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+            result ->
+        if(result.resultCode == Activity.RESULT_OK){
+            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+            handleResults(task)
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_activity)
@@ -52,13 +58,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
-        result ->
-                    if(result.resultCode == Activity.RESULT_OK){
-                        val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-                        handleResults(task)
-                    }
-    }
+
 
     private fun handleResults(task: Task<GoogleSignInAccount>) {
         if (task.isSuccessful){

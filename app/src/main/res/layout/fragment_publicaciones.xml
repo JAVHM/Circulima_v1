@@ -4,14 +4,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#F46F20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+        <Button
+            android:id="@+id/btnPublicaciones"
+            android:layout_width="148dp"
+            android:layout_height="50dp"
+            android:text="Publicaciones"
+            android:textSize="10sp" />
+        <Button
+
+            android:layout_width="131dp"
+            android:layout_height="match_parent"
+            android:text="Circulos"
+            android:id="@+id/btnLCirculos"
+            android:textSize="10sp" />
+        <Button
+            android:id="@+id/btnFav_C"
+            android:layout_width="147dp"
+            android:layout_height="match_parent"
+            android:text="Favoritos"
+
+            android:textSize="10sp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tviTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:text="Publicaciones"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,23 +62,6 @@
         tools:itemCount="5"
         tools:listitem="@layout/item_publicacion" />
 
-    <Button
-        android:id="@+id/btnLCirculos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="C"
-        app:layout_constraintBottom_toTopOf="@+id/rviPublicaciones"
-        app:layout_constraintEnd_toStartOf="@+id/tviTitulo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnFav_P"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="F"
-        app:layout_constraintBottom_toTopOf="@+id/rviPublicaciones"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tviTitulo"
-        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
