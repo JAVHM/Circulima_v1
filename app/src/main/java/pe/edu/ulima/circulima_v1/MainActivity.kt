@@ -1,9 +1,12 @@
 package pe.edu.ulima.circulima_v1
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.MenuView
@@ -39,6 +42,14 @@ class MainActivity : AppCompatActivity() {
         val displayName = intent.getStringExtra("displayName")
         eteNombre!!.setText(displayName.toString())
         eteCorreo!!.setText(email.toString())
+
+        val btnLogout = nviMain.getHeaderView(0).findViewById<View>(R.id.btnLogout)
+        
+        btnLogout.setOnClickListener{
+            auth.signOut()
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+
         println("INFO RECUPERADA")
         println(email)
         println(givenName)
