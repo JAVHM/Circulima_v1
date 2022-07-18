@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         println(displayName)
 
         val ft = supportFragmentManager.beginTransaction()
-        ft.add(R.id.fcvSecciones, fragmentCirculos)
+        ft.add(R.id.fcvSecciones, fragmentPublicaciones)
         ft.commit()
 
     }
