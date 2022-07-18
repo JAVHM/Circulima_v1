@@ -7,6 +7,15 @@
     tools:context=".LoginActivity">
 
 
+    <Button
+        android:id="@+id/btnGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="Entrar con Google" />
+
     <EditText
         android:id="@+id/edittext2"
         android:layout_width="333dp"
