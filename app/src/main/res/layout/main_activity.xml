@@ -8,17 +8,14 @@
     tools:context=".MainActivity"
     android:id="@+id/dlaMain">
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/fcvSecciones"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="656dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="3dp">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fcvSecciones"
-            android:layout_width="match_parent"
-            android:layout_height="131dp"
-            android:layout_weight="1" />
-    </LinearLayout>
+    </FrameLayout>
 
 
     <com.google.android.material.navigation.NavigationView

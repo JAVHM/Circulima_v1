@@ -3,6 +3,7 @@ package pe.edu.ulima.circulima_v1.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.Dispatchers
@@ -27,7 +28,16 @@ class ListaPublicacionesFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_publicaciones, container, false)
+        val view = inflater.inflate(R.layout.fragment_publicaciones, container, false)
+        val cirBtn : Button = view.findViewById(R.id.btnLCirculos)
+        cirBtn.setOnClickListener {
+            val fragment = ListaCirculosFragment()
+            val ft = fragmentManager?.beginTransaction()
+            ft?.addToBackStack(null)
+            ft?.replace(R.id.fcvSecciones, fragment)?.commit()
+        }
+
+        return view
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

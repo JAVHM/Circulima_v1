@@ -29,4 +29,24 @@
         app:layout_constraintVertical_bias="1.0"
         tools:itemCount="5"
         tools:listitem="@layout/item_publicacion" />
+
+    <Button
+        android:id="@+id/btnLCirculos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        app:layout_constraintBottom_toTopOf="@+id/rviPublicaciones"
+        app:layout_constraintEnd_toStartOf="@+id/tviTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnFav_P"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="F"
+        app:layout_constraintBottom_toTopOf="@+id/rviPublicaciones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tviTitulo"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
